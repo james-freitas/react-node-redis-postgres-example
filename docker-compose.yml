@@ -4,6 +4,11 @@ services:
     image: 'postgres:latest'
   redis:
     image: 'redis:latest'
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
   api:
     build:
       dockerfile: Dockerfile.dev
